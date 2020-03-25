@@ -4,3 +4,7 @@ The presentation by [Michael Friedrich](https://gitlab.com/dnsmichi): [Make your
 
 The CI config solution is provided in the [.gitlab-ci.solution.yml](.gitlab-ci.solution.yml) file in case you need assistance from the exercises.
 
+If you have any questions for our community team, you can contact John via Twitter [@john_cogs](https://twitter.com/john_cogs) or [email](mailto:evangelists@gitlab.com).
+
+Hope to see you at our next GitLab remote meetup!
+
