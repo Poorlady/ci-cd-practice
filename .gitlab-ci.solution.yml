@@ -2,8 +2,7 @@
 image: golang:latest
 
 variables:
-  # Please edit to your GitLab project
-  # Meetup: Edited project URL
+  # Please edit to your GitLab project #### EDITED 
   REPO_NAME: gitlab.com/dnsmichi/meetup-2020-cw13
 
 # The problem is that to be able to use go get, one needs to put
@@ -17,8 +16,10 @@ before_script:
   - ln -svf $CI_PROJECT_DIR $GOPATH/src/$REPO_NAME
   - cd $GOPATH/src/$REPO_NAME
 
+#### EDITED
 stages:
   - test
+  - coverage
   - build
   - deploy
 
@@ -29,16 +30,22 @@ format:
     - go vet $(go list ./... | grep -v /vendor/)
     - go test -race $(go list ./... | grep -v /vendor/)
 
-# Meetup: Rename 'my-app' to 'tanuki' below
+#### EDITED
+coverage:
+  stage: coverage
+  script:
+    - go test -cover $(go list ./... | grep -v /vendor/)    
+
+#### EDITED
 compile:
   stage: build
   script:
     - go build -race -ldflags "-extldflags '-static'" -o $CI_PROJECT_DIR/tanuki
   artifacts:
     paths:
-      - tanuki
+      - tanuki 
 
-# Meetup: Added this job
+#### EDITED
 run:
   stage: deploy
   script:
