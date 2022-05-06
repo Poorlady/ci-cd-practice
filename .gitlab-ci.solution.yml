@@ -34,6 +34,7 @@ format:
 #### EDITED
 coverage:
   stage: coverage
+  coverage: '/\d+.\d+% of statements/'
   script:
     - go test -cover $(go list ./... | grep -v /vendor/)    
 
